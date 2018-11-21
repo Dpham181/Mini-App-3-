@@ -10,51 +10,57 @@
             android:id="@+id/output"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/Output_lable"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/mbps_input" />
 
         <TextView
             android:id="@+id/linklable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/LINK_LABLE"
             app:layout_constraintBaseline_toBaselineOf="@+id/mbps_input"
+            app:layout_constraintEnd_toEndOf="@+id/barrier4"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/mib_input"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="44dp"
             android:ems="10"
             android:hint="@string/hint1"
             android:inputType="numberDecimal"
             android:text="@string/input1"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/barrier4"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="Autofill" />
 
         <EditText
             android:id="@+id/mbps_input"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="1dp"
             android:ems="10"
             android:hint="@string/hint2"
             android:inputType="numberDecimal"
             android:text="@string/input2"
             app:layout_constraintEnd_toEndOf="@+id/mib_input"
+            app:layout_constraintStart_toEndOf="@+id/barrier4"
             app:layout_constraintTop_toBottomOf="@+id/mib_input"
             tools:ignore="Autofill" />
 
@@ -63,8 +69,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/DATA_LABLE"
             app:layout_constraintBaseline_toBaselineOf="@+id/mib_input"
+            app:layout_constraintEnd_toEndOf="@+id/barrier4"
             app:layout_constraintStart_toStartOf="parent" />
 
         <android.support.constraint.Barrier

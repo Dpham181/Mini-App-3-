@@ -1,7 +1,6 @@
 package edu.fullerton.cpsc411.assignment_2
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import edu.fullerton.cpsc411.assignment_2.mainFragment.OnFragmentInteractionListener
 
 
 class MainActivity : AppCompatActivity() {

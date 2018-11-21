@@ -19,15 +19,7 @@ import java.util.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [mainFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [mainFragment.newInstance] factory method to
- * create an instance of this fragment.
- *
- */
+
 class mainFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -46,14 +38,25 @@ class mainFragment : Fragment() {
 
     }
 
+
+    // inflate fragment to match with layout and container
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
+
+
+
+    // implemented on view created for calculation and save the instance state
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // two functions for calcuation
         fun cal(mib: kotlin.Double?, mbp: kotlin.Double?): kotlin.Double? {
 
             return mib!! * Math.pow(2.0, 20.0) * 8.0 / (mbp!! * Math.pow(10.0, 6.0))
@@ -64,6 +67,7 @@ class mainFragment : Fragment() {
             return String.format(Locale.US, "%.1f", final_output)
 
         }
+        // extention function for output
         fun TextView.finalOutput(){
             val input1 = mib_input.text
             val input2 = mbps_input.text
@@ -79,7 +83,7 @@ class mainFragment : Fragment() {
 
             }
         }
-
+        // text on change for any new input value and keeping recalculate the ouput
         fun EditText.setWatcher() {
             this.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
